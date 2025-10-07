@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-pod
+  labels:
+    app: color
+spec:
+  containers:
+    - name: test-cont
+      image: kodekloud/webapp-color
+      ports:
+      - containerPort: 8080   # 👈 this tells Kubernetes what port your app listens on
+      envFrom:
+      - configMapRef:
+          name: test-config
+ 
