@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: internal
+  labels:
+    app: internal
+  namespace: default
+spec:
+  containers:
+    - name: internal
+      image: kodekloud/webapp-conntest
+      env:
+        - name: APP_NAME
+          value: "Internal Al-Nafi Application"
+        - name: BG_COLOR
+          value: "blue"
+      ports:
+        - containerPort: 8080
+          protocol: TCP

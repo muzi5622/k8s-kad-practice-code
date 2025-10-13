@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: color-tol
+  name: color-tol
+spec:
+  containers:
+  - image: nginx
+    name: color-tol
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations:
+  - key: color
+    value: blue
+    effect: NoSchedule 
+
+status: {}

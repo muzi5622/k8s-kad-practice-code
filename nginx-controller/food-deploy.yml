@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-food
+  namespace: app-space
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-food
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: webapp-food
+    spec:
+      containers:
+        - name: webapp-food
+          image: kodekloud/ecommerce:food
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: node-selector
+  name: node-selector
+spec:
+  containers:
+  - image: nginx
+    name: node-selector
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  nodeSelector:
+    cpu: large
+
+status: {}
